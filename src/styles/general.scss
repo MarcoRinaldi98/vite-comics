@@ -1,0 +1,37 @@
+@use '../styles/partials/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: variables.$color-secondary;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+}
+
+main {
+    height: 150px;
+    width: 100%;
+
+    h2 {
+        color: variables.$color-white;
+        padding: 20px;
+    }
+}
+
+footer {
+    height: calc(100vh - 100px - 150px);
+    width: 100%;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+}
