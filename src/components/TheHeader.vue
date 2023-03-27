@@ -52,9 +52,11 @@ export default {
 
 <template>
     <header>
-        <nav class="container">
+        <nav>
             <div class="brand">
-                <img src="../assets/dc-logo.png" />
+                <a href="#">
+                    <img src="../assets/dc-logo.png" />
+                </a>
             </div>
             <ul class="navbar-link">
                 <li v-for="(link, i) in navLinks" :key="i">
@@ -75,46 +77,47 @@ header {
     background-color: variables.$color-white;
     height: 100%;
     width: 100%;
-}
 
-.brand {
-    height: 100%;
-
-    img {
-        width: calc(100% - 20px);
-        padding: 10px;
-    }
-}
-
-nav {
-    @include mixins.d-flex-between;
-    height: 100%;
-
-    ul {
+    .brand {
         height: 100%;
 
-        li {
-            height: 100%;
-            display: inline-block;
-            line-height: 100px;
+        img {
+            width: calc(100% - 20px);
+            padding: 10px;
+        }
+    }
 
-            .nav-link {
-                text-decoration: none;
-                padding: 10px;
-                text-transform: uppercase;
-                font-size: 12px;
-                font-weight: bold;
-                color: variables.$color-black;
+    nav {
+        @include mixins.contenitore;
+        @include mixins.d-flex-between;
+        height: 100%;
+
+        ul {
+            height: 100%;
+
+            li {
+                height: 100%;
+                display: inline-block;
+                line-height: 100px;
+
+                &:hover {
+                    border-bottom: 4px solid variables.$color-primary;
+                }
+
+                .nav-link {
+                    text-decoration: none;
+                    padding: 10px;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: variables.$color-black;
+                }
+
+                &:hover .nav-link {
+                    color: variables.$color-primary;
+                }
             }
         }
     }
-}
-
-li:hover .nav-link {
-    color: variables.$color-primary;
-}
-
-li:hover {
-    border-bottom: 4px solid variables.$color-primary;
 }
 </style>

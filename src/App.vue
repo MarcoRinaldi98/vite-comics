@@ -4,7 +4,7 @@
   </header>
 
   <main>
-    <div class="container">
+    <div>
       <h2> Content goes here </h2>
     </div>
   </main>

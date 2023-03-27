@@ -62,32 +62,38 @@ export default {
     background-color: #0282f9;
     height: 30%;
     width: 100%;
-}
 
-.display {
-    @include mixins.d-flex-around;
-    height: 100%;
-}
+    .container {
+        @include mixins.contenitore;
+        @include mixins.d-flex-around;
+        height: 100%;
+        padding: 0 20px;
 
-.box {
-    height: 60px;
-    @include mixins.d-flex-center;
-    padding: 0 5px;
-}
+        .box {
+            height: 80px;
+            @include mixins.d-flex-center;
 
-img {
-    height: 100%;
-}
+            img {
+                height: 100%;
+            }
 
-span {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-left: 5px;
-}
+            span {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 14px;
+                margin-left: 10px;
+                font-weight: 600;
+            }
 
-a {
-    text-decoration: none;
-    color: variables.$color-white;
+            a {
+                text-decoration: none;
+                color: variables.$color-white;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 </style>

@@ -32,22 +32,23 @@ export default {
 
 <template>
     <section id="footer-bottom">
-        <div class="bg-size">
-            <div class="container display">
-                <button>SIGN-UP NOW!</button>
-                <ul>
-                    <li>
-                        <h3>
-                            FOLLOW US
-                        </h3>
-                    </li>
-                    <li v-for="element in iconList">
-                        <div class="circle">
-                            <i :class="['fa-' + element.icon, element.type]"></i>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        <div class="container">
+            <button>SIGN-UP NOW!</button>
+            <ul>
+                <li>
+                    <h3>
+                        FOLLOW US
+                    </h3>
+                </li>
+                <li v-for="element in iconList">
+                    <div class="circle">
+                        <i :class="['fa-' + element.icon, element.type]"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+
         </div>
     </section>
 </template>
@@ -57,58 +58,60 @@ export default {
 @use '../styles/partials/mixins';
 
 #footer-bottom {
-    background-color: variables.$color-secondary;
+    background-color: variables.$color-footer;
     height: 20%;
     width: 100%;
-}
 
-.bg-size {
-    background-color: variables.$color-footer;
-    height: 70%;
-}
+    .container {
+        background-color: variables.$color-footer;
+        @include mixins.contenitore;
+        @include mixins.d-flex-between;
+        height: 70%;
 
-.display {
-    @include mixins.d-flex-between;
-    height: 100%;
-}
+        button {
+            padding: 1rem;
+            border: 3px solid variables.$color-primary;
+            background-color: transparent;
+            color: variables.$color-white;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
 
-button {
-    padding: 1rem;
-    border: 3px solid variables.$color-primary;
-    background-color: transparent;
-    color: variables.$color-white;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-}
+            &:hover {
+                background-color: variables.$color-white;
+                color: variables.$color-black;
+            }
+        }
 
-button:hover {
-    background-color: variables.$color-white;
-    color: variables.$color-black;
-}
+        li {
+            display: inline-block;
+            padding: 10px;
 
-.circle {
-    height: 50px;
-    width: 50px;
-    background-color: variables.$color-white;
-    border-radius: 50%;
-    @include mixins.d-flex-center;
-    font-size: 30px;
-    opacity: 0.5;
-    cursor: pointer;
+            h3 {
+                color: variables.$color-primary;
+            }
 
-    &:hover {
-        opacity: 1;
+            .circle {
+                height: 50px;
+                width: 50px;
+                background-color: variables.$color-white;
+                border-radius: 50%;
+                @include mixins.d-flex-center;
+                font-size: 30px;
+                opacity: 0.5;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
     }
-}
 
-h3 {
-    color: variables.$color-primary;
-
-}
-
-li {
-    display: inline-block;
-    padding: 10px;
+    .bottom {
+        background-color: variables.$color-secondary;
+        width: 100%;
+        height: 30%;
+    }
 }
 </style>

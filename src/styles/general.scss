@@ -22,16 +22,12 @@ main {
 
     h2 {
         color: variables.$color-white;
-        padding: 20px;
+        padding-top: 50px;
+        text-align: center;
     }
 }
 
 footer {
     height: calc(100vh - 100px - 150px);
     width: 100%;
-}
-
-.container {
-    width: 1000px;
-    margin: auto;
 }
