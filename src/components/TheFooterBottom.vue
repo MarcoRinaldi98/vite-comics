@@ -3,7 +3,7 @@ export default {
     name: "TheFooterBottom",
     data() {
         return {
-            navLinks: [
+            iconList: [
                 {
                     type: 'fa-brands',
                     icon: 'facebook-f'
@@ -32,8 +32,22 @@ export default {
 
 <template>
     <section id="footer-bottom">
-        <div class="container">
-
+        <div class="bg-size">
+            <div class="container display">
+                <button>SIGN-UP NOW!</button>
+                <ul>
+                    <li>
+                        <h3>
+                            FOLLOW US
+                        </h3>
+                    </li>
+                    <li v-for="element in iconList">
+                        <div class="circle">
+                            <i :class="['fa-' + element.icon, element.type]"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </template>
@@ -42,8 +56,58 @@ export default {
 @use '../styles/partials/variables';
 
 #footer-bottom {
-    background-color: #303030;
-    height: 25%;
+    background-color: variables.$color-secondary;
+    height: 20%;
     width: 100%;
+}
+
+.bg-size {
+    background-color: variables.$color-footer;
+    height: 70%;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+button {
+    padding: 1rem;
+    border: 3px solid variables.$color-primary;
+    background-color: transparent;
+    color: variables.$color-white;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: variables.$color-white;
+    color: variables.$color-black;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: variables.$color-white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+h3 {
+    color: variables.$color-primary;
+
+}
+
+li {
+    display: inline-block;
+    padding: 10px;
 }
 </style>

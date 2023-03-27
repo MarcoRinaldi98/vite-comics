@@ -3,7 +3,7 @@ export default {
     name: "TheFooterCenter",
     data() {
         return {
-            navLinks: [
+            footerLinks: [
                 {
                     name: 'dc comics',
                     type: [
@@ -57,8 +57,19 @@ export default {
 
 <template>
     <section id="footer-center">
-        <div class="container">
-
+        <div class="container d-flex bg-img">
+            <ul v-for="(link, i) in footerLinks" :key="i">
+                <li>
+                    <h3>
+                        {{ link.name }}
+                    </h3>
+                </li>
+                <li v-for="element in link.type">
+                    <a href="#">
+                        {{ element }}
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
 </template>
@@ -70,5 +81,38 @@ export default {
     background-image: url(../assets/footer-bg.jpg);
     height: 50%;
     width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.bg-img {
+    height: 100%;
+    background-image: url(../assets/dc-logo-bg.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+ul {
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+h3 {
+    color: variables.$color-white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: variables.$color-grey;
+    font-size: 12px;
 }
 </style>

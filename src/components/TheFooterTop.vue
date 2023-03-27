@@ -27,7 +27,7 @@ export default {
                 {
                     href: "#visa",
                     text: "dc power visa",
-                    image: "buy-dc-power-visa.png"
+                    image: "buy-dc-power-visa.svg"
                 }
             ]
         }
@@ -48,7 +48,7 @@ export default {
 
 #footer-top {
     background-color: #0282f9;
-    height: 25%;
+    height: 30%;
     width: 100%;
 }
 </style>
