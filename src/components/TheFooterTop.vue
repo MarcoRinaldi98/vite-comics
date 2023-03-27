@@ -3,7 +3,7 @@ export default {
     name: "TheFooterTop",
     data() {
         return {
-            navLinks: [
+            imageList: [
                 {
                     href: "#digitalcomics",
                     text: "digital comics",
@@ -31,14 +31,21 @@ export default {
                 }
             ]
         }
+    }, methods: {
+        getImagePath: function (img) {
+            return new URL(`../assets/${img}`, import.meta.url).href;
+        }
     }
 }
 </script>
 
 <template>
     <section id="footer-top">
-        <div class="container">
-
+        <div class="container display">
+            <div class="box" v-for="element in imageList">
+                <img :src="getImagePath(element.image)" />
+                <span>{{ element.text }}</span>
+            </div>
         </div>
     </section>
 </template>
@@ -50,5 +57,30 @@ export default {
     background-color: #0282f9;
     height: 30%;
     width: 100%;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.box {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+img {
+    height: 100%;
+}
+
+span {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: variables.$color-white;
+    margin-left: 5px;
 }
 </style>
