@@ -76,6 +76,7 @@ export default {
    
 <style lang="scss" scoped>
 @use '../styles/partials/variables';
+@use '../styles/partials/mixins';
 
 #footer-center {
     background-image: url(../assets/footer-bg.jpg);

@@ -69,6 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables';
+@use '../styles/partials/mixins';
 
 header {
     background-color: variables.$color-white;
@@ -86,9 +87,7 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.d-flex-between;
     height: 100%;
 
     ul {

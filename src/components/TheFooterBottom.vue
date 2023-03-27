@@ -54,6 +54,7 @@ export default {
   
 <style lang="scss" scoped>
 @use '../styles/partials/variables';
+@use '../styles/partials/mixins';
 
 #footer-bottom {
     background-color: variables.$color-secondary;
@@ -67,9 +68,7 @@ export default {
 }
 
 .display {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.d-flex-between;
     height: 100%;
 }
 
@@ -93,12 +92,14 @@ button:hover {
     width: 50px;
     background-color: variables.$color-white;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include mixins.d-flex-center;
     font-size: 30px;
     opacity: 0.5;
     cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
 h3 {

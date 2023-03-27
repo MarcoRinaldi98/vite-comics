@@ -44,7 +44,11 @@ export default {
         <div class="container display">
             <div class="box" v-for="element in imageList">
                 <img :src="getImagePath(element.image)" />
-                <span>{{ element.text }}</span>
+                <span>
+                    <a href="#">
+                        {{ element.text }}
+                    </a>
+                </span>
             </div>
         </div>
     </section>
@@ -52,6 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables';
+@use '../styles/partials/mixins';
 
 #footer-top {
     background-color: #0282f9;
@@ -60,16 +65,13 @@ export default {
 }
 
 .display {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    @include mixins.d-flex-around;
     height: 100%;
 }
 
 .box {
     height: 60px;
-    display: flex;
-    align-items: center;
+    @include mixins.d-flex-center;
     padding: 0 5px;
 }
 
@@ -78,9 +80,14 @@ img {
 }
 
 span {
+    text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
-    color: variables.$color-white;
     margin-left: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: variables.$color-white;
 }
 </style>
