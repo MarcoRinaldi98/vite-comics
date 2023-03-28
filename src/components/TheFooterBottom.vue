@@ -1,31 +1,8 @@
 <script>
 export default {
     name: "TheFooterBottom",
-    data() {
-        return {
-            iconList: [
-                {
-                    type: 'fa-brands',
-                    icon: 'facebook-f'
-                },
-                {
-                    type: 'fa-brands',
-                    icon: 'twitter'
-                },
-                {
-                    type: 'fa-brands',
-                    icon: 'youtube'
-                },
-                {
-                    type: 'fa-brands',
-                    icon: 'pinterest-p'
-                },
-                {
-                    type: 'fa-solid',
-                    icon: 'location-dot'
-                }
-            ]
-        }
+    props: {
+        icon: Array
     }
 }
 </script>
@@ -40,7 +17,7 @@ export default {
                         FOLLOW US
                     </h3>
                 </li>
-                <li v-for="element in iconList">
+                <li v-for="element in icon">
                     <div class="circle">
                         <i :class="['fa-' + element.icon, element.type]"></i>
                     </div>

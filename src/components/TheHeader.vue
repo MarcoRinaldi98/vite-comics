@@ -1,51 +1,8 @@
 <script>
 export default {
     name: "TheHeader",
-    data() {
-        return {
-            navLinks: [
-                {
-                    href: "#characters",
-                    text: "characters"
-                },
-                {
-                    href: "#comics",
-                    text: "comics"
-                },
-                {
-                    href: "#movies",
-                    text: "movies"
-                },
-                {
-                    href: "#tv",
-                    text: "tv"
-                },
-                {
-                    href: "#games",
-                    text: "games"
-                },
-                {
-                    href: "#collectibles",
-                    text: "collectibles"
-                },
-                {
-                    href: "#videos",
-                    text: "videos"
-                },
-                {
-                    href: "#fans",
-                    text: "fans"
-                },
-                {
-                    href: "#news",
-                    text: "news"
-                },
-                {
-                    href: "#shop",
-                    text: "shop"
-                }
-            ]
-        }
+    props: {
+        nav: Array
     }
 }
 </script>
@@ -55,11 +12,11 @@ export default {
         <nav>
             <div class="brand">
                 <a href="#">
-                    <img src="../assets/dc-logo.png" />
+                    <img src="../assets/dc-logo.png" alt="Logo Comics" />
                 </a>
             </div>
             <ul class="navbar-link">
-                <li v-for="(link, i) in navLinks" :key="i">
+                <li v-for="(link, i) in nav" :key="i">
                     <a class="nav-link" :href="link.href">
                         {{ link.text }}
                     </a>

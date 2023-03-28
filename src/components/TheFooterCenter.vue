@@ -1,56 +1,8 @@
 <script>
 export default {
     name: "TheFooterCenter",
-    data() {
-        return {
-            footerLinks: [
-                {
-                    name: 'dc comics',
-                    type: [
-                        'Characters',
-                        'Comics',
-                        'Movies',
-                        'TV',
-                        'Games',
-                        'Videos',
-                        'News'
-                    ]
-                },
-                {
-                    name: 'shop',
-                    type: [
-                        'Shop DC',
-                        'Shop DC Collectibles'
-                    ]
-                },
-                {
-                    name: 'DC',
-                    type: [
-                        'Term of Use',
-                        'Privacy policy (new)',
-                        'Ad Choices',
-                        'Advertising',
-                        'Jobs',
-                        'Subscriptions',
-                        'Talent Workshops',
-                        'CPSC Certificates',
-                        'Ratings',
-                        'Shop Help',
-                        'Contact Us'
-                    ]
-                },
-                {
-                    name: 'sites',
-                    type: [
-                        'DC',
-                        'MAD Magazine',
-                        'DC kids',
-                        'DC Universe',
-                        'DC Power Visa'
-                    ]
-                }
-            ]
-        }
+    props: {
+        fLinks: Array
     }
 }
 </script>
@@ -58,7 +10,7 @@ export default {
 <template>
     <section id="footer-center">
         <div class="container">
-            <ul v-for="(link, i) in footerLinks" :key="i">
+            <ul v-for="(link, i) in fLinks" :key="i">
                 <li>
                     <h3>
                         {{ link.name }}
@@ -79,7 +31,7 @@ export default {
 @use '../styles/partials/mixins';
 
 #footer-center {
-    background-image: url(../assets/footer-bg.jpg);
+    background-image: url(/footer-bg.jpg);
     height: 50%;
     width: 100%;
 
@@ -87,7 +39,7 @@ export default {
         @include mixins.contenitore;
         display: flex;
         height: 100%;
-        background-image: url(../assets/dc-logo-bg.png);
+        background-image: url(/dc-logo-bg.png);
         background-position: right;
         background-repeat: no-repeat;
 

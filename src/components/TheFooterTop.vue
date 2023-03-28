@@ -1,49 +1,22 @@
 <script>
 export default {
     name: "TheFooterTop",
-    data() {
-        return {
-            imageList: [
-                {
-                    href: "#digitalcomics",
-                    text: "digital comics",
-                    image: "buy-comics-digital-comics.png"
-                },
-                {
-                    href: "#merch",
-                    text: "dc merchandise",
-                    image: "buy-comics-merchandise.png"
-                },
-                {
-                    href: "#subscription",
-                    text: "subscription",
-                    image: "buy-comics-subscriptions.png"
-                },
-                {
-                    href: "#shop",
-                    text: "comic shop locator",
-                    image: "buy-comics-shop-locator.png"
-                },
-                {
-                    href: "#visa",
-                    text: "dc power visa",
-                    image: "buy-dc-power-visa.svg"
-                }
-            ]
-        }
+    props: {
+        image: Array
     }, methods: {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href;
         }
     }
 }
+
 </script>
 
 <template>
     <section id="footer-top">
         <div class="container display">
-            <div class="box" v-for="element in imageList">
-                <img :src="getImagePath(element.image)" />
+            <div class="box" v-for="(element, index) in image">
+                <img :src="getImagePath(element.image)" :key="index" />
                 <span>
                     <a href="#">
                         {{ element.text }}
@@ -92,6 +65,10 @@ export default {
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+
+            &:last-child img {
+                height: 70%;
             }
         }
     }
