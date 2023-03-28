@@ -8,7 +8,6 @@
 
 body {
     font-family: sans-serif;
-    background-color: variables.$color-secondary;
 }
 
 header {
@@ -17,17 +16,11 @@ header {
 }
 
 main {
-    height: 150px;
     width: 100%;
-
-    h2 {
-        color: variables.$color-white;
-        padding-top: 50px;
-        text-align: center;
-    }
+    background-color: variables.$color-secondary;
 }
 
 footer {
-    height: calc(100vh - 100px - 150px);
+    height: 80vh;
     width: 100%;
 }

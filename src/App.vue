@@ -4,9 +4,8 @@
   </header>
 
   <main>
-    <div>
-      <h2> Content goes here </h2>
-    </div>
+    <TheHero />
+    <TheMain />
   </main>
 
   <footer>
@@ -18,6 +17,8 @@
 
 <script>
 import TheHeader from './components/TheHeader.vue';
+import TheHero from './components/TheHero.vue';
+import TheMain from './components/TheMain.vue';
 import TheFooterTop from './components/TheFooterTop.vue';
 import TheFooterCenter from './components/TheFooterCenter.vue';
 import TheFooterBottom from './components/TheFooterBottom.vue';
@@ -26,6 +27,8 @@ export default {
 
   components: {
     TheHeader,
+    TheHero,
+    TheMain,
     TheFooterTop,
     TheFooterCenter,
     TheFooterBottom
